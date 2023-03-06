@@ -1,0 +1,7 @@
+dev_portfolio_backend/db.sqlite3
+dev_portfolio_backend/accounts/__pycache__
+dev_portfolio_backend/profile/__pycache__
+dev_portfolio_backend/__pycache__
+db.sqlite3
+__pycache__
+venv

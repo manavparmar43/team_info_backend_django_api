@@ -1,0 +1,18 @@
+deploy-job:      
+  stage: deploy  
+  tags:
+    - "team-info-backend1"
+  variables:
+    #GIT_STRATEGY: clone
+    BUILD_DIR: "/var/www/html/builds/6hSz_Piy/0/team-information/team-info-backend/"
+    TARGET_DIR: "/var/www/html/team-info-backend"
+  script:
+    - echo "Deploying application..."
+    - cd $BUILD_DIR
+    - pip3 install -r requirements.txt
+    - rsync -P -av $BUILD_DIR/* $TARGET_DIR
+  
+    - echo "Application successfully deployed."
+    - rm -rf /var/www/html/builds/6hSz_Piy/
+  only:
+    - master
